@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "CalculationMicroservice";
+
+// The greeting service definition.
+service Calculator {
+  rpc Add (CalculationParams) returns (CalculationAns);
+  rpc Subtract (CalculationParams) returns (CalculationAns);
+  rpc Multiply (CalculationParams) returns (CalculationAns);
+  rpc Divide (CalculationParams) returns (CalculationAns);
+}
+
+// The request message containing the user's name.
+message CalculationParams {
+  double num1 = 1;
+  double num2 = 2;
+}
+
+// The response message containing the greetings.
+message CalculationAns {
+  double ans = 1;
+}
